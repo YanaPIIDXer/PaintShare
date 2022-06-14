@@ -1,5 +1,5 @@
 <template>
-    <ImageView />
+    <ImageView :width="width" :height="height" />
 </template>
 
 <script>
@@ -9,6 +9,12 @@ export default {
     name: 'PaintView',
     components: {
         ImageView,
+    },
+    datas: function () {
+        return {
+            width: 640,
+            height: 480,
+        }
     },
 }
 </script>

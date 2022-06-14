@@ -1,7 +1,7 @@
 <template>
     <div class="image-view">
         <FileInput @on-load="onReadFile" />
-        <ImageArea :image="image" />
+        <ImageArea :image="image" :width="width" :height="height" />
     </div>
 </template>
 
@@ -14,6 +14,18 @@ export default {
     components: {
         FileInput,
         ImageArea,
+    },
+    props: {
+        width: {
+            type: Number,
+            default: 640,
+            require: false,
+        },
+        height: {
+            type: Number,
+            default: 480,
+            require: false,
+        }
     },
     data: function () {
         return {
