@@ -26,6 +26,7 @@ export default {
          */
         onReadFile: function (data) {
             this.image = data.image
+            this.$emit('on-load', data)
         },
     },
 }
