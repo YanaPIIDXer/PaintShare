@@ -1,13 +1,17 @@
 <template>
   <div id="app">
+    <PaintView />
   </div>
 </template>
 
 <script>
+import PaintView from '@/components/organisms/PaintView'
+
 export default {
   name: 'App',
   components: {
-  }
+    PaintView,
+  },
 }
 </script>
 
