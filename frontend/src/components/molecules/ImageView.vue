@@ -25,6 +25,7 @@ export default {
          * ファイルを読み込んだ
          */
         onReadFile: function (data) {
+            console.log(data)
             this.image = data.image
         },
     },

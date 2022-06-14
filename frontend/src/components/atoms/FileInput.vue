@@ -19,10 +19,18 @@ export default {
 
             const reader = new FileReader()
             reader.readAsDataURL(file)
-            reader.onload = () => {
-                const data = {
-                    image: reader.result,
-                }
+            reader.onload = async () => {
+                const data = await new Promise(resolve => {
+                    const image = new Image()
+                    image.onload = function () {
+                        resolve({
+                            image: reader.result,
+                            width: image.width,
+                            height: image.height
+                        })
+                    }
+                    image.src = reader.result
+                })
                 this.$emit('on-load', data)
             }
         }
