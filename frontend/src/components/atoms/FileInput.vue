@@ -20,7 +20,10 @@ export default {
             const reader = new FileReader()
             reader.readAsDataURL(file)
             reader.onload = () => {
-                this.$emit('on-load', reader.result)
+                const data = {
+                    image: reader.result,
+                }
+                this.$emit('on-load', data)
             }
         }
     },

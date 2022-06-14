@@ -24,8 +24,8 @@ export default {
         /**
          * ファイルを読み込んだ
          */
-        onReadFile: function (base64) {
-            this.image = base64
+        onReadFile: function (data) {
+            this.image = data.image
         },
     },
 }
