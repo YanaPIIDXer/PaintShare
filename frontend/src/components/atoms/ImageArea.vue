@@ -1,6 +1,6 @@
 <template>
     <div class="image-area">
-        <img :src="image" />
+        <img v-if="image" :src="image" :width="width" :height="height" />
     </div>
 </template>
 
@@ -13,6 +13,16 @@ export default {
             default: '',
             require: false,
         },
+        width: {
+            type: Number,
+            default: 640,
+            require: false,
+        },
+        height: {
+            type: Number,
+            default: 480,
+            require: false,
+        }
     },
 }
 </script>
