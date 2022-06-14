@@ -1,6 +1,6 @@
 <template>
     <div class="image-area">
-        <image :src="image" />
+        <img :src="image" />
     </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
         image: {
             type: String,
             default: '',
+            require: false,
         },
     },
 }
