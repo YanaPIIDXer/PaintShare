@@ -1,6 +1,6 @@
 <template>
     <div class="image-view">
-        <FileInput  @on-load="onReadFile" />
+        <FileInput @on-load="onReadFile" />
         <ImageArea :image="image" />
     </div>
 </template>
