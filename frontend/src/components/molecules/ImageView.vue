@@ -1,19 +1,24 @@
 <template>
     <div class="image-view">
         <FileInput @on-load="onReadFile" />
-        <ImageArea :image="image" :width="width" :height="height" />
+        <div class="paint-area">
+            <ImageArea class="image-area" :image="image" :width="width" :height="height" />
+            <PaintInput class="paint-input" :enabled="!!image" :width="width" :height="height" />
+        </div>
     </div>
 </template>
 
 <script>
 import FileInput from '@/components/atoms/FileInput'
 import ImageArea from '@/components/atoms/ImageArea'
+import PaintInput from '@/components/atoms/PaintInput'
 
 export default {
     name: 'ImageView',
     components: {
         FileInput,
         ImageArea,
+        PaintInput,
     },
     props: {
         width: {
@@ -45,5 +50,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.image-view {
+    .paint-area {
+        position: relative;
+        left: calc(50% - 320px);
+        .image-area, .paint-input {
+            position: absolute;
+        }
+    }
+}
 </style>
